@@ -48,13 +48,14 @@ on CENTOS 7.
 
 [Certbot](https://certbot.eff.org/lets-encrypt/centos6-apache)
 
-Also set up with autorenewal by putting [this file](scripts/crontab) into `etc/crontab` on the server
-Also add the line [here](scripts/visudo) by running `visudo` and appending to the end of the file,
+Also set up with autorenewal by putting [this script](scripts/crontab) into `etc/crontab` file on the server
+Also run `sudo visudo` and appending the [script here](scripts/visudo) to the end of the file,
 so that the sudo user can run the command without needing a password
 
 ### Setup up a Mail Server with a Gmail Relay
 
-[Guide here](https://devops.profitbricks.com/tutorials/configure-a-postfix-relay-through-gmail-on-centos-7/)
+[Guide here](https://devops.profitbricks.com/tutorials/configure-a-postfix-relay-through-gmail-on-centos-7/) - 
+this will allow for email to be sent from your personal Gmail account
 
 ### Misc Tasks
 * [Install Node.js](https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora)
