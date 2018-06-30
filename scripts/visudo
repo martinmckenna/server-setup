@@ -1,0 +1,1 @@
+marty ALL=(ALL) NOPASSWD:SETENV: /home/marty/certbot-auto

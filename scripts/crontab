@@ -1,0 +1,2 @@
+# be sure to add the MAILTO value as well
+23 0,13 * * * marty ~/certbot-auto renew
