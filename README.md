@@ -48,8 +48,9 @@ on CENTOS 7.
 
 [Certbot](https://certbot.eff.org/lets-encrypt/centos6-apache)
 
-Also set up with autorenewal by putting [this script](scripts/crontab) into `etc/crontab` file on the server
-Also run `sudo visudo` and appending the [script here](scripts/visudo) to the end of the file,
+Also set up with autorenewal by putting [this script](scripts/crontab) into `etc/crontab` file on the server.
+
+Please note that the above will not work without first running `sudo visudo` and appending the [script here](scripts/visudo) to the end of the file,
 so that the sudo user can run the command without needing a password
 
 ### Setup up a Mail Server with a Gmail Relay
