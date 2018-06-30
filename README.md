@@ -67,6 +67,8 @@ These are things that I ran into that had to be solved in the past
 
 [Write permissions inside of `public_html`](https://blog.lysender.com/2015/07/centos-7-selinux-php-apache-cannot-writeaccess-file-no-matter-what/)
 
+[`domain.com` not working in URL bar](https://www.linode.com/community/questions/16962/apache-virtual-hosts-non-www-not-working)
+
 Also when in doubt, try running `sudo`
 
 Happy configuring!
