@@ -35,6 +35,7 @@ on CENTOS 7.
 #### Install a LAMP Server
 
 [Linode - Setting up LAMP on Centos 7](https://www.linode.com/docs/web-servers/lamp/lamp-on-centos-7/)
+
 [Install and Configure phpMyAdmin](https://www.liquidweb.com/kb/how-to-install-and-configure-phpmyadmin-on-centos-7/)
 
 #### Redirect www to non-www (Optional)
@@ -44,6 +45,7 @@ on CENTOS 7.
 #### Set up SSL
 
 [Digital Ocean - Secure Apache w/ Let's Encrpyt](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7)
+
 [Certbot](https://certbot.eff.org/lets-encrypt/centos6-apache)
 
 Also set up with autorenewal by putting [this file](scripts/crontab) into `etc/crontab` on the server
@@ -62,6 +64,7 @@ Also add the line [here](scripts/visudo) by running `visudo` and appending to th
 These are things that I ran into that had to be solved in the past
 
 [Postfix `main.cf` permission denied](https://serverfault.com/questions/503642/postfix-main-cf-permission-denied)
+
 [Write permissions inside of `public_html`](https://blog.lysender.com/2015/07/centos-7-selinux-php-apache-cannot-writeaccess-file-no-matter-what/)
 
 Also when in doubt, try running `sudo`
