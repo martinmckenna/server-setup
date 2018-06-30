@@ -57,7 +57,9 @@ so that the sudo user can run the command without needing a password
 [Guide here](https://devops.profitbricks.com/tutorials/configure-a-postfix-relay-through-gmail-on-centos-7/)
 
 ### Misc Tasks
-* Install Git, Yarn, and Node
+* [Install Node.js](https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora)
+* Install Git - `sudo yum install git`
+* [Install Yarn](https://yarnpkg.com/lang/en/docs/install/#centos-stable)
 
 
 ## Possble Issues
