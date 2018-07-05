@@ -1,5 +1,8 @@
 # Configuring WSL (with Django)
 
+These steps will help you configure WSL so that you can start developing on an virtual environment
+with Python (and Django)
+
 ## Initial Steps
 
 [Install Ubuntu from the Windows app store and turn on the WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
@@ -19,6 +22,8 @@ the default python3 by running
 ```
 alias python=python3
 ```
+
+Then, run `python -V` again to confirm python3 is the default
 
 We're also going to want pip. Run
 
@@ -42,7 +47,26 @@ ln -s /mnt/c/Users/%username%/linux ~/linux
 ```
 
 __It's important that you don't create any directory in Linux until this point. This command will
-automatically create the `~/linux` directory for you when you create the link__
+automatically create the `~/linux` directory for you when you create the symlink__
+
+Since were getting everything confirgured to work with Python, lets install PyCharm IDE
+and allow ourselves to open directories in PyCharm from the command line
+
+First, download PyCharm from the official site
+
+Then we need to add Pycharm to PATH in Windows, so navigate to
+
+`Advanced Settings > Environment Variables > Path > Edit > New`
+
+and then enter the path to the `PyCharm.exe` file. For me, it was the following
+
+`C:\Program Files\JetBrains\PyCharm Community Edition 2018.1.4\bin`
+
+Finally, click okay and now close all terminals and reopen
+
+Now, we should be able to run the following from the command line
+
+`pycharm64.exe myproject`
 
 ## Getting VirtualEnv Configured
 
