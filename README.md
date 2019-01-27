@@ -1,15 +1,15 @@
-# Getting Setup on Centos 7
+# Getting Setup on Debian 9
 
 This guide is a checklist of all the things that need to be done to configure a server
-on CENTOS 7.
+on Debian 9.
 
 ### Create a Sudo User
 
-[Linode - create sudo user](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-centos-quickstart)
+[Linuxize - create sudo user](https://linuxize.com/post/how-to-create-a-sudo-user-on-debian/)
 
 ### Auth with SSH
 
-[Digital Ocean - how to set up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7)
+[Digital Ocean - how to set up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-debian-9)
 * create SSH keys by running `ssh-keygen` on client machine (or use the ones that I already have)
 * copy public key (`cat ~/.ssh/id_rsa.pub`) to `./~ssh/authorized_keys` file on the server
 
@@ -20,7 +20,7 @@ on CENTOS 7.
 
 [Linode - Getting started](https://www.linode.com/docs/getting-started/)
 
-* run updates (`yum update` - pretty simple)
+* run updates (`sudo apt-get update && sudo apt-get upgrade` - pretty simple)
 * set hostname
 * update hosts file
 * set timezone
@@ -30,38 +30,36 @@ on CENTOS 7.
 [Linode - How to Secure Your Server](https://www.linode.com/docs/security/securing-your-server/)
 
 * disallow root login
-* configure a firewall with FirewallD ([Steps located here](https://www.linode.com/docs/security/firewalls/introduction-to-firewalld-on-centos/))
+* configure a firewall with UFW ([Steps located here](https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw/))
+  * be sure to remember to both activate the firewall and allow port 22 SSH
 
-### Install a LAMP Server
+### Install Nginx Server
 
-[Linode - Setting up LAMP on Centos 7](https://www.linode.com/docs/web-servers/lamp/lamp-on-centos-7/)
+[Digital Ocean - Setting up Nginx with server blocks](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-debian-9)
 
-[Install and Configure phpMyAdmin](https://www.liquidweb.com/kb/how-to-install-and-configure-phpmyadmin-on-centos-7/)
+### Getting React-Router working with Nginx
 
-### Redirect www to non-www (Optional)
+[See here for config fix](https://stackoverflow.com/questions/47025983/getting-404-with-react-router-app-with-nginx)
 
-[Digital Ocean Guide](https://www.digitalocean.com/community/tutorials/how-to-redirect-www-to-non-www-with-apache-on-centos-7)
+### Install SSL and redirect to https
 
-### Set up SSL
+[Digital Ocean - Secure Nginx w/ Let's Encrpyt](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-9)
 
-[Digital Ocean - Secure Apache w/ Let's Encrpyt](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7)
+This will create a cron job in `/etc/cron.d/certbot`.
 
-[Certbot](https://certbot.eff.org/lets-encrypt/centos6-apache)
-
-Also set up with autorenewal by putting [this script](scripts/crontab) into `etc/crontab` file on the server.
-
-Please note that the above will not work without first running `sudo visudo` and appending the [script here](scripts/visudo) to the end of the file,
-so that the sudo user can run the command without needing a password
+Replace the existing cron job with [this script](scripts/crontab)
 
 ### Setup up a Mail Server with a Gmail Relay
 
-[Guide here](https://devops.profitbricks.com/tutorials/configure-a-postfix-relay-through-gmail-on-centos-7/) - 
+[Linode - Guide here](https://www.linode.com/docs/email/postfix/configure-postfix-to-send-mail-using-gmail-and-google-apps-on-debian-or-ubuntu/) - 
 this will allow for email to be sent from your personal Gmail account
 
+Please note: You'll also need to install `sudo apt-get install mailutils`
+
 ### Misc Tasks
-* [Install Node.js](https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora)
-* Install Git - `sudo yum install git`
-* [Install Yarn](https://yarnpkg.com/lang/en/docs/install/#centos-stable)
+* [Install Node.js](https://github.com/nodesource/distributions/blob/master/README.md)
+* Install Git - `sudo apt-get install -y git`
+* [Install Yarn](https://yarnpkg.com/lang/en/docs/install/#debian-stable)
 
 
 ## Possble Issues
