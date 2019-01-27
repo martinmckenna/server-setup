@@ -30,6 +30,8 @@ on Debian 9.
 [Linode - How to Secure Your Server](https://www.linode.com/docs/security/securing-your-server/)
 
 * disallow root login
+
+[Digital Ocean - Add a firewall](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-debian-9)
 * configure a firewall with UFW ([Steps located here](https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw/))
   * be sure to remember to both activate the firewall and allow port 22 SSH
 
